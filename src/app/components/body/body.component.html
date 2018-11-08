@@ -5,14 +5,14 @@
     <h1>*ngIF</h1>
     <hr>
 
-    <div class="card text-white bg-primary mb-3" style="width: 100%;">
+    <div *ngIf="mostrar" class="card text-white bg-primary mb-3" style="width: 100%;">
       <div class="card-body">
-        <h5 class="card-title"> </h5>
-        <p class="card-text"></p>
+        <h5 class="card-title"> {{frase.autor}}</h5>
+        <p class="card-text">{{frase.mensaje}}</p>
       </div>
     </div>
 
-    <button class="btn btn-outline-primary">
+    <button (click)="mostrar = !mostrar" class="btn btn-outline-primary">
       Mostrar/Ocultar
     </button>
 
@@ -23,9 +23,7 @@
     <hr>
 
     <ul class="list-group">
-      <li class="list-group-item">
-item
-      </li>
+      <li *ngFor="let personaje of personajes; let i = index" class="list-group-item">{{i+1}} || {{personaje}} </li>
     </ul>
   </div>
 
